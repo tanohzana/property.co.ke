@@ -8,7 +8,7 @@
     <title>Kenya Property & Real Estate | Land, Houses, Apartments for Sale & Rent in Kenya</title>
     <meta name="title" content="Kenya Property & Real Estate | Land, Houses, Apartments for Sale & Rent in Kenya">
     <meta name="description" content="Find the best property deals in Kenya. Buy, sell, or rent land, houses, apartments, and commercial properties in Nairobi, Mombasa, Kisumu, and across Kenya. Your trusted Kenya real estate platform.">
-    <meta name="keywords" content="Kenya property, real estate Kenya, land for sale Kenya, houses for sale Kenya, apartments for rent Nairobi, property Kenya, real estate Nairobi, Kenya land, buy property Kenya, rent house Kenya, commercial property Kenya, plots for sale Kenya, homes Kenya, property investment Kenya, Mombasa property, Kisumu real estate, Nakuru property, affordable housing Kenya">
+    <meta name="keywords" content="Kenya property, apartments for sale Kenya, apartment prices Kenya, real estate Kenya, property prices Kenya, Nairobi apartments, Kilimani apartments, Westlands apartments, Mombasa property, Nyali apartments, Kisumu property, Milimani apartments, studio apartments Kenya, 1 bedroom apartments Kenya, 2 bedroom apartments Kenya, 3 bedroom apartments Kenya, buy apartment Kenya, apartment selling prices, property investment Kenya, real estate Nairobi">
     <meta name="author" content="Kenya Property">
     <meta name="robots" content="index, follow">
 
@@ -84,19 +84,57 @@
         }
 
         body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            padding: 20px;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background-color: #f5f5f5;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066cc;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nav-btn {
+            padding: 0.5rem 1rem;
+            background-color: transparent;
+            color: #333;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-btn:hover {
+            color: #0066cc;
+        }
+
+        .nav-btn.active {
+            color: #0066cc;
+            font-weight: 600;
         }
 
         .container {
-            text-align: center;
-            max-width: 900px;
-            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
         }
 
         h1 {
@@ -104,6 +142,13 @@
             color: #1a1a1a;
             margin-bottom: 1rem;
             font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #1a1a1a;
+            margin: 2rem 0 1rem 0;
+            font-weight: 600;
         }
 
         .message {
@@ -120,6 +165,41 @@
             line-height: 1.8;
         }
 
+        .price-table {
+            width: 100%;
+            margin: 2rem 0;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .price-table table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .price-table th {
+            background-color: #0066cc;
+            color: white;
+            padding: 1rem;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        .price-table td {
+            padding: 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .price-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .price-table tr:hover {
+            background-color: #f8f9fa;
+        }
+
         a {
             color: #0066cc;
             text-decoration: none;
@@ -128,23 +208,192 @@
         a:hover {
             text-decoration: underline;
         }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 1rem;
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .nav-buttons {
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .price-table {
+                overflow-x: auto;
+            }
+
+            .price-table table {
+                font-size: 0.9rem;
+            }
+
+            .price-table th,
+            .price-table td {
+                padding: 0.75rem 0.5rem;
+            }
+
+            .footer {
+                padding: 1.5rem 1rem;
+            }
+        }
     </style>
 </head>
 <body>
+    <nav class="navbar">
+        <div class="brand">Property.co.ke</div>
+        <div class="nav-buttons">
+            <button class="nav-btn" onclick="filterByType('studio')">Studio</button>
+            <button class="nav-btn" onclick="filterByType('1br')">1BR</button>
+            <button class="nav-btn" onclick="filterByType('2br')">2BR</button>
+            <button class="nav-btn" onclick="filterByType('3br')">3BR+</button>
+        </div>
+    </nav>
+
     <main class="container">
         <h1>Kenya Property & Real Estate</h1>
 
-        <div class="message">
-            Hey, I recently purchased this domain, email me at: <a href="mailto:tanohzana@gmail.com">tanohzana@gmail.com</a>
+        <h2>Apartment Selling Prices in Kenya</h2>
+        <div class="price-table">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Property Type</th>
+                        <th>Average Selling Price (KSh)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-type="studio">
+                        <td>Nairobi - Kilimani</td>
+                        <td>Studio</td>
+                        <td>5.062.500 Ksh</td>
+                    </tr>
+                    <tr data-type="1br">
+                        <td>Nairobi - Kilimani</td>
+                        <td>1 Bedroom</td>
+                        <td>6.456.250 Ksh</td>
+                    </tr>
+                    <tr data-type="2br">
+                        <td>Nairobi - Kilimani</td>
+                        <td>2 Bedroom</td>
+                        <td>9.468.750 Ksh</td>
+                    </tr>
+                    <tr data-type="3br">
+                        <td>Nairobi - Kilimani</td>
+                        <td>3+ Bedroom</td>
+                        <td>20.850.000 Ksh</td>
+                    </tr>
+                    <tr data-type="studio">
+                        <td>Nairobi - Westlands</td>
+                        <td>Studio</td>
+                        <td>4.226.250 Ksh</td>
+                    </tr>
+                    <tr data-type="1br">
+                        <td>Nairobi - Westlands</td>
+                        <td>1 Bedroom</td>
+                        <td>6.612.500 Ksh</td>
+                    </tr>
+                    <tr data-type="2br">
+                        <td>Nairobi - Westlands</td>
+                        <td>2 Bedroom</td>
+                        <td>12.312.500 Ksh</td>
+                    </tr>
+                    <tr data-type="3br">
+                        <td>Nairobi - Westlands</td>
+                        <td>3+ Bedroom</td>
+                        <td>19.412.500 Ksh</td>
+                    </tr>
+                    <tr data-type="1br">
+                        <td>Mombasa - Nyali</td>
+                        <td>1 Bedroom</td>
+                        <td>6.624.875 Ksh</td>
+                    </tr>
+                    <tr data-type="2br">
+                        <td>Mombasa - Nyali</td>
+                        <td>2 Bedroom</td>
+                        <td>9.517.500 Ksh</td>
+                    </tr>
+                    <tr data-type="3br">
+                        <td>Mombasa - Nyali</td>
+                        <td>3+ Bedroom</td>
+                        <td>16.387.500 Ksh</td>
+                    </tr>
+                    <tr data-type="2br">
+                        <td>Kisumu - Milimani</td>
+                        <td>2 Bedroom</td>
+                        <td>14.450.000 Ksh</td>
+                    </tr>
+                    <tr data-type="3br">
+                        <td>Kisumu - Milimani</td>
+                        <td>3+ Bedroom</td>
+                        <td>39.250.000 Ksh</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
 
         <div class="keywords">
             <p>
-                <strong>Coming Soon:</strong> Your premier destination for Kenya property listings, real estate investments,
-                land for sale, houses for rent, apartments in Nairobi, Mombasa property deals, commercial real estate,
-                affordable housing Kenya, plots for sale, and property management services across Kenya.
+                <strong>Coming Soon:</strong> Your premier destination for Kenya property listings, apartment selling prices,
+                real estate investments, apartments for sale in Nairobi, Mombasa, and Kisumu, property market data,
+                and real estate services across Kenya.
             </p>
         </div>
     </main>
+
+    <footer class="footer">
+        <div class="footer-brand">Property.co.ke</div>
+        <div class="footer-copyright">&copy; 2026 Property.co.ke. All rights reserved.</div>
+    </footer>
+
+    <script>
+        function filterByType(type) {
+            const buttons = document.querySelectorAll('.nav-btn');
+            const rows = document.querySelectorAll('.price-table tbody tr');
+            const clickedButton = event.target;
+
+            if (clickedButton.classList.contains('active')) {
+                clickedButton.classList.remove('active');
+                rows.forEach(row => row.style.display = '');
+            } else {
+                buttons.forEach(btn => btn.classList.remove('active'));
+                clickedButton.classList.add('active');
+                rows.forEach(row => {
+                    if (row.dataset.type === type) {
+                        row.style.display = '';
+                    } else {
+                        row.style.display = 'none';
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>
