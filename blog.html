@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>Property Blog | Kenya Real Estate Insights & Guides</title>
+    <meta name="title" content="Property Blog | Kenya Real Estate Insights & Guides">
+    <meta name="description" content="Read expert insights on Kenya real estate, coastal living, property investment, and market trends. Your guide to property in Kenya.">
+    <meta name="keywords" content="Kenya property blog, real estate Kenya, property investment Kenya, coastal living Kenya, Nairobi property, Mombasa real estate">
+    <meta name="author" content="Kenya Property">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.property.co.ke/blog">
+    <meta property="og:title" content="Property Blog | Kenya Real Estate Insights & Guides">
+    <meta property="og:description" content="Read expert insights on Kenya real estate, coastal living, and property investment.">
+    <meta property="og:image" content="https://www.property.co.ke/nairobi_landscape.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://www.property.co.ke/blog">
+    <meta property="twitter:title" content="Property Blog | Kenya Real Estate Insights & Guides">
+    <meta property="twitter:description" content="Read expert insights on Kenya real estate, coastal living, and property investment.">
+    <meta property="twitter:image" content="https://www.property.co.ke/nairobi_landscape.jpg">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://www.property.co.ke/blog">
+
+    <!-- Cloudflare Web Analytics -->
+    <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "0c2379743e974b67a9cc1b2a4be43faf"}'></script>
+    <!-- End Cloudflare Web Analytics -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background-color: #ffffff;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background-color: #ffffff;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #0066cc;
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-link:hover {
+            color: #0066cc;
+        }
+
+        .hero-section {
+            position: relative;
+            height: 50vh;
+            background-image: url('nairobi_landscape.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-text {
+            position: relative;
+            color: white;
+            font-size: clamp(2rem, 6vw, 4rem);
+            font-weight: 700;
+            text-align: center;
+            padding: 0 2rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-color: #f0f0f0;
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .footer {
+            background-color: #f8f9fa;
+            padding: 2rem;
+            text-align: center;
+            margin-top: 3rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-brand {
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #0066cc;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-copyright {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section {
+                height: 100vh;
+            }
+
+            .navbar {
+                padding: 1rem;
+            }
+
+            .nav-links {
+                gap: 0.5rem;
+            }
+
+            .nav-link {
+                padding: 0.4rem 0.8rem;
+                font-size: 0.85rem;
+            }
+
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <a href="index.html" class="brand">Property.co.ke</a>
+        <div class="nav-links">
+            <a href="buy-sell-apartments-houses.html" class="nav-link">Buy & Sell</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <h1 class="hero-text">Blog</h1>
+    </section>
+
+    <main class="container">
+        <h2 class="section-title">Latest Articles</h2>
+
+        <div class="cards-grid">
+            <a href="living-at-the-coast-kenya.html" class="card">
+                <div class="card-image" style="background-image: url('diani.jpg');"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Living on the Coast: A Guide to Life Along Kenya's Shoreline</h3>
+                    <p class="card-description">Discover life along Kenya's coastline from Mombasa to Diani, Watamu, and Kilifi. Your complete guide to coastal living and real estate opportunities.</p>
+                </div>
+            </a>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <a href="index.html" class="footer-brand" style="text-decoration: none; display: inline-block;">Property.co.ke</a>
+        <div class="footer-copyright">&copy; 2026 Property.co.ke. All rights reserved.</div>
+    </footer>
+</body>
+</html>
