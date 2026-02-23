@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://www.property.co.ke/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
