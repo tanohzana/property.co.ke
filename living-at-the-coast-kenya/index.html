@@ -171,6 +171,73 @@
             text-align: justify;
         }
 
+        .related-articles {
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            padding: 0 2rem 3rem 2rem;
+        }
+
+        .section-title {
+            font-size: clamp(1.5rem, 4vw, 2rem);
+            color: #1a1a1a;
+            margin-bottom: 2rem;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-image {
+            height: 200px;
+            background-size: cover;
+            background-position: center;
+            background-color: #f0f0f0;
+        }
+
+        .card-content {
+            padding: 1.25rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: #666;
+            line-height: 1.5;
+        }
+
         .footer {
             background-color: #f8f9fa;
             padding: 2rem;
@@ -220,6 +287,15 @@
             .intro {
                 font-size: 1.05rem;
             }
+
+            .related-articles {
+                padding: 0 1rem 2rem 1rem;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
         }
     </style>
 </head>
@@ -267,6 +343,20 @@
             </p>
         </article>
     </main>
+
+    <section class="related-articles">
+        <h2 class="section-title">You may also like</h2>
+
+        <div class="cards-grid">
+            <a href="/living-in-nairobi/" class="card">
+                <div class="card-image" style="background-image: url('/nairobi_landscape_3.jpg');"></div>
+                <div class="card-content">
+                    <h3 class="card-title">Living in Nairobi: Urban Energy, Diversity, and History</h3>
+                    <p class="card-description">Discover life in Nairobi, Kenya's capital. Explore key neighborhoods, urban lifestyle, and what makes the Green City in the Sun one of Africa's most dynamic cities.</p>
+                </div>
+            </a>
+        </div>
+    </section>
 
     <footer class="footer">
         <a href="/" class="footer-brand" style="text-decoration: none; display: inline-block;">Property.co.ke</a>
